@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../api/axios';
 
 // FEATURE 1: Smart Budget Predictor
-export default function BudgetPredictor({ month, year, refreshKey }) {
+export default function BudgetPredictor({ month, year, refreshKey, onSaved }) {
   const [budgetInput, setBudgetInput] = useState('');
   const [prediction, setPrediction] = useState(null);
   const [saving, setSaving] = useState(false);
@@ -29,6 +29,7 @@ export default function BudgetPredictor({ month, year, refreshKey }) {
     try {
       await api.post('/budget', { month, year, amount: Number(budgetInput) });
       await loadPrediction();
+      if (onSaved) onSaved();
     } finally {
       setSaving(false);
     }
@@ -56,15 +57,15 @@ export default function BudgetPredictor({ month, year, refreshKey }) {
           <p className="alert-message">{prediction.message}</p>
           <div className="prediction-stats">
             <div>
-              <strong>${prediction.spentSoFar.toFixed(2)}</strong>
+              <strong>₹{prediction.spentSoFar.toFixed(2)}</strong>
               <span>Spent so far</span>
             </div>
             <div>
-              <strong>${prediction.avgDailySpend.toFixed(2)}</strong>
+              <strong>₹{prediction.avgDailySpend.toFixed(2)}</strong>
               <span>Avg / day</span>
             </div>
             <div>
-              <strong>${prediction.projectedTotal.toFixed(2)}</strong>
+              <strong>₹{prediction.projectedTotal.toFixed(2)}</strong>
               <span>Projected month total</span>
             </div>
             {prediction.budgetAmount && (
