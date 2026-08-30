@@ -26,15 +26,15 @@ function AppRoutes() {
             path="/"
             element={
               <PrivateRoute>
-                <Dashboard />
+                <BudgetPage />
               </PrivateRoute>
             }
           />
           <Route
-            path="/budget"
+            path="/activity"
             element={
               <PrivateRoute>
-                <BudgetPage />
+                <Dashboard />
               </PrivateRoute>
             }
           />

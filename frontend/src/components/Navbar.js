@@ -13,11 +13,11 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">💰 Expense Tracker</div>
+      <div className="navbar-brand">💰 Kashé</div>
       <div className="navbar-links">
-        <Link to="/">Dashboard</Link>
-        <Link to="/budget">Budget Predictor</Link>
-        <Link to="/split">Split Bills</Link>
+        <Link to="/">DashBoard</Link>
+        <Link to="/activity">My Expenses</Link>
+        <Link to="/split">Split & Settle</Link>
       </div>
       <div className="navbar-user">
         <span>Hi, {user?.name}</span>
@@ -25,4 +25,4 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+} 

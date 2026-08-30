@@ -38,6 +38,9 @@ export default function BudgetPredictor({ month, year, refreshKey, onSaved }) {
   return (
     <div className="card">
       <h3>Smart Budget Predictor</h3>
+      <p className="subtitle">
+              Set a monthly budget and see a live projection of your end-of-month spend based on your current pace.
+            </p>
       <form className="form-row" onSubmit={handleSaveBudget}>
         <input
           type="number"

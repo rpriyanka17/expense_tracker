@@ -6,7 +6,7 @@ export default function SplitExpenseWidget() {
   const [splits, setSplits] = useState([]);
   const [title, setTitle] = useState('');
   const [totalAmount, setTotalAmount] = useState('');
-  const [paidBy, setPaidBy] = useState('You');
+  const [paidBy, setPaidBy] = useState('');
   const [participants, setParticipants] = useState([{ name: '', share: '' }]);
   const [error, setError] = useState('');
 
@@ -96,6 +96,7 @@ export default function SplitExpenseWidget() {
             placeholder="Paid by"
             value={paidBy}
             onChange={(e) => setPaidBy(e.target.value)}
+            required
           />
         </div>
 

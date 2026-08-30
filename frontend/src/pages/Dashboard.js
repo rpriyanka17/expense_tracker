@@ -29,7 +29,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1>Dashboard — {now.toLocaleString('default', { month: 'long' })} {year}</h1>
+      <h1>Track Your Expenses</h1><br />
 
       <div className="summary-row">
         <div className="card summary-card">

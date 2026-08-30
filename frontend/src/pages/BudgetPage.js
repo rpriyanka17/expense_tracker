@@ -10,10 +10,8 @@ export default function BudgetPage() {
 
   return (
     <div>
-      <h1>Smart Budget Predictor</h1>
-      <p className="subtitle">
-        Set a monthly budget and see a live projection of your end-of-month spend based on your current pace.
-      </p>
+      <h1>Dashboard — {now.toLocaleString('default', { month: 'long' })} {year}</h1><br />
+      
       <BudgetPredictor
         month={month}
         year={year}
